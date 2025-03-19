@@ -1,1 +1,1 @@
-You've downloaded project's repository 
+You've downloaded project's repository.
