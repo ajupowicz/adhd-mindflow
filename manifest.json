@@ -1,0 +1,25 @@
+{
+  "manifest_version": 3,
+  "name": "ADHD Plug-in",
+  "description": "Wtyczka do nauki koncentracji dla osób z ADHD",
+  "version": "1.0",
+  "permissions": [
+    "storage"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "skrypt.js"
+      ],
+      "css": [
+        "styl.css"
+      ]
+    }
+  ],
+  "action": {
+    "default_icon": "icon.png" 
+  }
+}
