@@ -1,1 +1,1 @@
-You've downloaded project's repository.
+Plugin that helps people with ADHD/ADD studying.

@@ -1,25 +1,18 @@
 {
   "manifest_version": 3,
-  "name": "ADHD Plug-in",
-  "description": "Wtyczka do nauki koncentracji dla osób z ADHD",
-  "version": "1.0",
-  "permissions": [
-    "storage"
-  ],
+  "name": "Video Quiz & Productivity Extension",
+  "version": "1.1",
+  "description": "Randomly pauses YouTube videos and asks questions. Includes Pomodoro Timer, Notepad, and a Memory Color Game.",
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Video Quiz & Productivity"
+  },
   "content_scripts": [
     {
-      "matches": [
-        "<all_urls>"
-      ],
-      "js": [
-        "skrypt.js"
-      ],
-      "css": [
-        "styl.css"
-      ]
+      "matches": [ "https://www.youtube.com/watch*" ],
+      "js": [ "content.js" ],
+      "run_at": "document_end"
     }
   ],
-  "action": {
-    "default_icon": "icon.png" 
-  }
+  "permissions": []
 }
