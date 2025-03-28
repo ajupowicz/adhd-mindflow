@@ -1,18 +1,11 @@
 {
   "manifest_version": 3,
-  "name": "Video Quiz & Productivity Extension",
-  "version": "1.1",
-  "description": "Randomly pauses YouTube videos and asks questions. Includes Pomodoro Timer, Notepad, and a Memory Color Game.",
+  "name": "ADHD Productivity Panel",
+  "version": "1.3",
+  "description": "Productivity tools: Pomodoro, Notes, Mini Games, and White Noise.",
   "action": {
     "default_popup": "popup.html",
-    "default_title": "Video Quiz & Productivity"
+    "default_title": "Open Productivity Panel"
   },
-  "content_scripts": [
-    {
-      "matches": [ "https://www.youtube.com/watch*" ],
-      "js": [ "content.js" ],
-      "run_at": "document_end"
-    }
-  ],
-  "permissions": []
+  "permissions": [ "windows" ]
 }

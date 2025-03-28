@@ -1,7 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\CSS",
+    "\\js"
   ],
-  "SelectedNode": "\\README.md",
+  "SelectedNode": "\\manifest.json",
   "PreviewInSolutionExplorer": false
 }

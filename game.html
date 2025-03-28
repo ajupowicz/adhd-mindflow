@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mini Game</title>
+    <style>
+        body {
+            background-color: #0f1c2e;
+            color: white;
+            font-family: sans-serif;
+            padding: 20px;
+            position: relative;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            background: none;
+            border: none;
+            font-size: 18px;
+            color: white;
+            cursor: pointer;
+        }
+
+        #game-colors div {
+            width: 50px;
+            height: 50px;
+            margin: 5px;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <button class="close-btn" onclick="window.close()">X</button>
+    <h2>Memory Color Game</h2>
+    <button onclick="startGame()">Start Game</button>
+    <div id="game-colors"></div>
+    <p id="game-score"></p>
+
+    <!-- ✅ Dodany skrypt -->
+    <script src="js/game.js"></script>
+</body>
+</html>

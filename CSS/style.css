@@ -1,0 +1,22 @@
+﻿body.sidebar {
+    margin: 0;
+    padding: 10px;
+    background-color: #0f1c2e;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 100px;
+}
+
+.sidebar-icons button {
+    background: none;
+    border: none;
+    font-size: 24px;
+    margin: 10px;
+    cursor: pointer;
+    color: #fff;
+}
+
+    .sidebar-icons button:hover {
+        color: #00ffff;
+    }

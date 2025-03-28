@@ -2,67 +2,16 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Productivity Extension</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 10px;
-        }
-
-        .section {
-            margin-bottom: 20px;
-        }
-
-            .section h2 {
-                margin-bottom: 10px;
-                font-size: 18px;
-            }
-
-        button {
-            padding: 5px 10px;
-        }
-
-        input[type="number"] {
-            width: 50px;
-        }
-    </style>
+    <title>Productivity Panel</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
-    <div class="section" id="pomodoro-section">
-        <h2>Pomodoro Timer</h2>
-        <div>
-            <label>Work Time (min): <input type="number" id="workTime" value="25"></label>
-        </div>
-        <div>
-            <label>Break Time (min): <input type="number" id="breakTime" value="5"></label>
-        </div>
-        <div>
-            <label>Repetitions: <input type="number" id="repetitions" value="4"></label>
-        </div>
-        <div>
-            <button id="startPomodoro">Start</button>
-            <button id="stopPomodoro">Stop</button>
-        </div>
-        <div>
-            <p id="pomodoroStatus"></p>
-        </div>
+<body class="sidebar">
+    <div class="sidebar-icons">
+        <button id="btn-timer" title="Timer">⏱️</button>
+        <button id="btn-notes" title="Notes">📝</button>
+        <button id="btn-game" title="Game">🎮</button>
+        <button id="btn-noise" title="White Noise">🎧</button>
     </div>
-
-    <div class="section" id="notepad-section">
-        <h2>Notepad</h2>
-        <textarea id="notepad" rows="5" cols="30" placeholder="Write your notes here..."></textarea>
-        <br>
-        <button id="saveNotesButton">Save Notes</button>
-        <p id="saveStatus"></p>
-    </div>
-
-    <div class="section" id="mini-game-section">
-        <h2>Memory Color Game</h2>
-        <button onclick="startGame()">Start Game</button>
-        <div id="game-colors"></div>
-        <p id="game-score"></p>
-    </div>
-
     <script src="popup.js"></script>
 </body>
 </html>
