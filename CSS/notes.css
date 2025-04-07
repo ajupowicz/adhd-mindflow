@@ -1,0 +1,10 @@
+#notes-list {
+    padding-left: 1rem;
+}
+
+#notes-list > li {
+    color: white;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    margin-left: 0;
+}
