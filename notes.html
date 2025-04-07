@@ -28,14 +28,21 @@
             height: 150px;
             margin-top: 10px;
         }
+    
     </style>
+    <link rel="stylesheet" href="css/notes.css">
 </head>
 <body>
-    <button class="close-btn" onclick="window.close()">X</button>
-    <h2>Notes</h2>
-    <textarea id="notepad" placeholder="Write your notes here..."></textarea><br>
-    <button id="saveNotesButton">Save Notes</button>
-    <p id="saveStatus"></p>
+    <div id="container">
+        <button class="close-btn" onclick="window.close()">X</button>
+        <h2>Notes</h2>
+        <textarea id="notepad" placeholder="Write your notes here..."></textarea><br>
+        <button id="saveNotesButton">Save Notes</button>
+        <p id="saveStatus"></p>
+        <div id="notes-list-container">
+            <ul id="notes-list"></ul>
+        </div>
+    </div>
 
     <!-- ✅ Dodany skrypt -->
     <script src="js/notes.js"></script>
