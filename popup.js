@@ -1,4 +1,5 @@
-﻿document.getElementById("btn-timer").onclick = () =>
+
+document.getElementById("btn-timer").onclick = () =>
     chrome.windows.create({
         url: "timer.html",
         type: "popup",
