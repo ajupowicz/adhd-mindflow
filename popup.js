@@ -1,32 +1,34 @@
+const container = document.getElementById('container');
+const panel     = document.getElementById('panel-container');
+const iframe    = document.getElementById('iframe-content');
+const closeBtn  = document.getElementById('panel-close');
+const btnClose  = document.getElementById('btn-close');
+
+function loadSection(url) {
+  iframe.src = url;
+  panel.classList.add('active');
+  container.classList.add('expanded');
+}
 
 document.getElementById("btn-timer").onclick = () =>
-    chrome.windows.create({
-        url: "timer.html",
-        type: "popup",
-        width: 400,
-        height: 420
-    });
+  loadSection("timer.html");
 
 document.getElementById("btn-notes").onclick = () =>
-    chrome.windows.create({
-        url: "notes.html",
-        type: "popup",
-        width: 400,
-        height: 420
-    });
+  loadSection("notes.html");
 
 document.getElementById("btn-game").onclick = () =>
-    chrome.windows.create({
-        url: "game.html",
-        type: "popup",
-        width: 400,
-        height: 420
-    });
+  loadSection("game.html");
 
 document.getElementById("btn-noise").onclick = () =>
-    chrome.windows.create({
-        url: "whitenoise.html",
-        type: "popup",
-        width: 400,
-        height: 420
-    });
+  loadSection("whitenoise.html");
+
+// Zamknięcie panelu (wewnętrzny krzyżyk)
+closeBtn.onclick = () => {
+  panel.classList.remove('active');
+  container.classList.remove('expanded');
+};
+
+// Zamknięcie całego popupu (dolny X)
+btnClose.onclick = () => {
+  window.close();
+};

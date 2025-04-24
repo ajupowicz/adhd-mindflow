@@ -7,7 +7,9 @@
     "default_popup": "popup.html",
     "default_title": "Open Productivity Panel"
   },
-  "permissions": ["windows"],
+  "permissions": [
+    "windows"
+  ],
   "background": {
     "service_worker": "background.js"
   },

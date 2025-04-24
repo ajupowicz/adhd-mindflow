@@ -1,17 +1,39 @@
 ﻿<!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Productivity Panel</title>
-    <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8">
+  <title>Productivity Panel</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
-<body class="sidebar">
-    <div class="sidebar-icons">
-        <button id="btn-timer" title="Timer">⏱️</button>
-        <button id="btn-notes" title="Notes">📝</button>
-        <button id="btn-game" title="Game">🎮</button>
-        <button id="btn-noise" title="White Noise">🎧</button>
+<body>
+  <div class="container" id="container">
+    <!-- PANEL PO LEWEJ (domyślnie ukryty) -->
+    <div id="panel-container">
+      <span id="panel-close">×</span>
+      <iframe id="iframe-content" src="" sandbox></iframe>
     </div>
-    <script src="popup.js"></script>
+
+    <!-- PIONOWY PASEK IKON PO PRAWEJ -->
+    <div class="sidebar-icons">
+      <button id="btn-timer" title="Timer">
+        <img src="css/icons/clock-svgrepo-com.svg"       alt="Timer">
+      </button>
+      <button id="btn-notes" title="Notes">
+        <img src="css/icons/file-1-svgrepo-com.svg"      alt="Notes">
+      </button>
+      <button id="btn-game" title="Game">
+        <img src="css/icons/gamepad-svgrepo-com.svg"     alt="Game">
+      </button>
+      <button id="btn-noise" title="White Noise">
+        <img src="css/icons/headphones-svgrepo-com.svg"  alt="White Noise">
+      </button>
+      
+      <button id="btn-close" title="Close Extension">
+        <img src="css/icons/close-one-svgrepo-com.svg"   alt="Close">
+      </button>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
 </body>
 </html>

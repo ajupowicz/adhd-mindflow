@@ -1,22 +1,91 @@
-﻿body.sidebar {
+﻿/* --- RESET I TŁO CAŁOŚCI --- */
+html, body {
     margin: 0;
-    padding: 10px;
+    padding: 0;
+    background-color: #0f1c2e;
+  }
+  
+  /* --- KONTAINER --- */
+  .container {
+    position: relative;
+    width: 50px;            /* tylko pasek ikon */
+    height: auto;           /* dostosuje się do wysokości ikon */
+    transition: width 0.3s ease-in-out;
+  }
+  .container.expanded {
+    width: 460px;           /* 50px (pasek) + 400px (panel) + 10px odstępu */
+  }
+  
+  /* --- PANEL Z IFRAME --- */
+  #panel-container {
+    display: none;
+    position: absolute;
+    top: 10px;
+    right: 60px;           /* 50px (pasek) + 10px margines */
+    width: 400px;
+    height: 480px;
+    background-color: #0f1c2e;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  #panel-container.active {
+    display: block;
+  }
+  
+  /* --- PRZYCISK ZAMYKANIA PANELU --- */
+  #panel-close {
+    position: absolute;
+    top: 8px;
+    right: 12px;
+    font-size: 20px;
+    color: #fff;
+    cursor: pointer;
+    z-index: 10;
+  }
+  
+  /* --- IFRAME --- */
+  #iframe-content {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+  
+  /* --- PASEK IKON PO PRAWEJ --- */
+  .sidebar-icons {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50px;
     background-color: #0f1c2e;
     display: flex;
     flex-direction: column;
     align-items: center;
-    min-width: 100px;
-}
-
-.sidebar-icons button {
+    padding: 10px 0;
+  }
+  
+  /* --- PRZYCISKI Z IKONAMI --- */
+  .sidebar-icons button {
     background: none;
     border: none;
-    font-size: 24px;
-    margin: 10px;
     cursor: pointer;
-    color: #fff;
-}
-
-    .sidebar-icons button:hover {
-        color: #00ffff;
-    }
+    width: 40px;
+    height: 40px;
+    margin: 6px 0;      /* tu możesz podbić/maleńszymi wartościami dostosować odstępy */
+    padding: 0;
+  }
+  
+  /* --- OBRAZKI SVG --- */
+  .sidebar-icons button img {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+  
+  /* --- HOVER --- */
+  .sidebar-icons button:hover {
+    background: rgba(255,255,255,0.1);
+    border-radius: 50%;
+  }
+  
