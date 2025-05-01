@@ -1,4 +1,6 @@
 ﻿// Musi być w globalnym zakresie!
+
+console.log("✅ game.js załadowany");
 function startGame() {
     const gameContainer = document.getElementById("game-colors");
     const resultDisplay = document.getElementById("game-score");
@@ -49,3 +51,10 @@ function startGame() {
         });
     }, 5000);
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+    const btn = document.getElementById("start-btn");
+    if (btn) {
+      btn.addEventListener("click", startGame);
+    }
+  });

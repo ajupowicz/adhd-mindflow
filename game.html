@@ -34,11 +34,16 @@
 <body>
     <button class="close-btn" onclick="window.close()">X</button>
     <h2>Memory Color Game</h2>
-    <button onclick="startGame()">Start Game</button>
+    <!-- <button onclick="startGame()">Start Game</button> -->
+    <button id="start-btn">Start Game</button>
     <div id="game-colors"></div>
     <p id="game-score"></p>
 
     <!-- ✅ Dodany skrypt -->
     <script src="js/game.js"></script>
+    <script>
+        console.log("✅ inline script działa");
+        console.log("typeof startGame:", typeof startGame);
+      </script>
 </body>
 </html>
