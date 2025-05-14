@@ -63,3 +63,21 @@
 
     randomPause();
 })();
+
+//dodane
+let whiteNoise = null;
+
+chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
+  if (request.command === "toggleWhiteNoise") {
+    if (!whiteNoise) {
+      whiteNoise = new Audio(chrome.runtime.getURL("sounds/white-noise.mp3"));
+      whiteNoise.loop = true;
+      whiteNoise.volume = 0.5;
+      whiteNoise.play();
+    } else if (whiteNoise.paused) {
+      whiteNoise.play();
+    } else {
+      whiteNoise.pause();
+    }
+  }
+});
