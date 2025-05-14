@@ -11,7 +11,7 @@
             const notes = getNotes();
             notes.push(note);
             saveNotes(notes)
-        
+
             saveStatus.textContent = 'Notes saved!';
             setTimeout(() => { saveStatus.textContent = ''; }, 2000);
 
@@ -37,7 +37,24 @@ function displayNotes() {
     const notesList = document.getElementById('notes-list');
 
     notesList.innerHTML = '';
-    notes.forEach(note => {
-        notesList.innerHTML += `<li>${note}</li>`;
-    })
+    notes.forEach((note, index) => {
+        const li = document.createElement('li');
+        li.innerHTML = `${note} <span class="delete-note" data-index="${index}" style="cursor:pointer; color:red;">x</span>`;
+        notesList.appendChild(li);
+    });
+
+    const deleteButtons = document.querySelectorAll('.delete-note');
+    deleteButtons.forEach(button => {
+        button.addEventListener('click', function () {
+            const index = this.getAttribute('data-index');
+            deleteNote(index);
+        });
+    });
+}
+
+function deleteNote(index) {
+    const notes = getNotes();
+    notes.splice(index, 1);
+    saveNotes(notes);
+    displayNotes();
 }
