@@ -19,9 +19,6 @@ document.getElementById("btn-notes").onclick = () =>
 document.getElementById("btn-game").onclick = () =>
   loadSection("game.html");
 
-document.getElementById("btn-noise").onclick = () =>
-  loadSection("whitenoise.html");
-
 // Zamknięcie panelu (wewnętrzny krzyżyk)
 closeBtn.onclick = () => {
   panel.classList.remove('active');
@@ -32,3 +29,8 @@ closeBtn.onclick = () => {
 btnClose.onclick = () => {
   window.close();
 };
+
+
+document.getElementById('btn-noise').addEventListener('click', () => {
+  chrome.runtime.sendMessage({ command: "toggleWhiteNoise" });
+});
