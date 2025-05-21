@@ -18,7 +18,8 @@
       "resources": [
         "sounds/white-noise.mp3",
         "game.html",
-        "js/game.js"
+        "js/game.js",
+        "CSS/gamestyle.css"
       ],
       "matches": ["<all_urls>"]
     }

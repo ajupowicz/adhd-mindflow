@@ -1,49 +1,25 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Mini Game</title>
-    <style>
-        body {
-            background-color: #0f1c2e;
-            color: white;
-            font-family: sans-serif;
-            padding: 20px;
-            position: relative;
-        }
-
-        .close-btn {
-            position: absolute;
-            top: 10px;
-            right: 15px;
-            background: none;
-            border: none;
-            font-size: 18px;
-            color: white;
-            cursor: pointer;
-        }
-
-        #game-colors div {
-            width: 50px;
-            height: 50px;
-            margin: 5px;
-            display: inline-block;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <title>Emoji Game</title>
+  <link rel="stylesheet" href="CSS/gamestyle.css">
 </head>
 <body>
-    <button class="close-btn" onclick="window.close()">X</button>
-    <h2>Memory Color Game</h2>
-    <!-- <button onclick="startGame()">Start Game</button> -->
-    <button id="start-btn">Start Game</button>
-    <div id="game-colors"></div>
-    <p id="game-score"></p>
+  <h1>🎯 Match Word to Emoji</h1>
+  <div id="timer">60</div>
+  <div id="score">Score: 0</div>
+  <button id="start-btn">Start</button>
+  <div id="game-board"></div>
+  <div id="game-over" style="display:none;">
+    Game Over! Score: <span id="final-score"></span>
+  </div>
 
-    <!-- ✅ Dodany skrypt -->
-    <script src="js/game.js"></script>
-    <script>
-        console.log("✅ inline script działa");
-        console.log("typeof startGame:", typeof startGame);
-      </script>
+  <script>
+    const script = document.createElement('script');
+    script.src = chrome.runtime.getURL('js/game.js');
+    document.head.appendChild(script);
+  </script>
 </body>
 </html>
+
