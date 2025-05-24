@@ -20,6 +20,15 @@ function notify(title, msg) {
 }
 
 chrome.runtime.onMessage.addListener((req, sender, sendResponse) => {
+  if (req.command === "toggleWhiteNoise") {
+  chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
+    if (tabs[0]) {
+      chrome.tabs.sendMessage(tabs[0].id, { command: "toggleWhiteNoise" });
+    }
+  });
+  return true;
+}
+
   switch (req.action) {
     case "startPomodoro":
       pomodoro = {
