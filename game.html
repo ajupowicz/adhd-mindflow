@@ -2,24 +2,25 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Emoji Game</title>
+  <title>Memory Games</title>
   <link rel="stylesheet" href="CSS/gamestyle.css">
 </head>
 <body>
-  <h1>🎯 Match Word to Emoji</h1>
+  <h1>Memory Games</h1>
+
+  <!-- MODE SELECTOR -->
+  <div id="mode-selection">
+    <label><input type="radio" name="mode" value="emoji-word" checked> Emoji-Word Match</label>
+    <label><input type="radio" name="mode" value="classic-memory"> Classic Memory</label>
+  </div>
+
   <div id="timer">60</div>
   <div id="score">Score: 0</div>
   <button id="start-btn">Start</button>
-  <div id="game-board"></div>
-  <div id="game-over" style="display:none;">
-    Game Over! Score: <span id="final-score"></span>
-  </div>
 
-  <script>
-    const script = document.createElement('script');
-    script.src = chrome.runtime.getURL('js/game.js');
-    document.head.appendChild(script);
-  </script>
+  <div id="game-board"></div>
+  <div id="game-over" style="display: none;"></div>
+
+  <script src="js/game.js"></script>
 </body>
 </html>
-

@@ -1,54 +1,90 @@
+/* ===== overall panel ===== */
 body {
+  margin: 10px;
+  padding: 0;
   font-family: sans-serif;
   text-align: center;
-  background: #f9f9f9;
-  margin: 0;
-  padding: 20px;
+  overflow: hidden;
+  background-color: #0f1c2e; /* same navy as the rest */
+  color: #ffffff;
 }
 
-h1 {
-  margin-bottom: 10px;
+/* ===== mode selector ===== */
+#mode-selection {
+  margin: 8px 0;
+}
+#mode-selection label {
+  margin-right: 12px;
+  font-size: 14px;
+  color: #ffffff;
+  cursor: pointer;
+  user-select: none;
+}
+#mode-selection input {
+  margin-right: 4px;
 }
 
+/* ===== timer & score & start button ===== */
+#timer,
+#score {
+  font-size: 16px;
+  margin: 4px 0;
+}
+#start-btn {
+  margin: 8px 0;
+  background-color: #324160;
+  color: #ffffff;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+#start-btn:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+/* ===== game board grid ===== */
 #game-board {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-  gap: 12px;
-  max-width: 500px;
-  margin: 20px auto;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  justify-items: center;
+  margin-top: 10px;
 }
 
+/* ===== cards ===== */
 .card {
-  background: linear-gradient(to top left, #ffffff, #e3f2fd);
-  border-radius: 16px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  width: 100px;
-  height: 100px;
-  font-size: 16px;
-  font-weight: bold;
+  width: 80px;
+  height: 80px;
+  background-color: #f0f8ff;
+  border-radius: 6px;
   display: flex;
   align-items: center;
   justify-content: center;
-  cursor: pointer;
-  user-select: none;
-  transition: transform 0.2s, background-color 0.3s;
-  text-align: center;
-  padding: 10px;
-}
-
-.card:hover {
-  transform: scale(1.07);
-  background: #d1ecf1;
-}
-
-.card.matched {
-  opacity: 0.4;
-  pointer-events: none;
-}
-
-#game-over {
-  margin-top: 20px;
   font-size: 18px;
   color: #333;
+  cursor: pointer;
+  user-select: none;
+  transition: background 0.2s;
+  font-weight: normal; /* placeholder “Click” stays normal */
 }
-  
+.card:hover {
+  background-color: #e1f5fe;
+}
+/* once flipped or matched, text is bold */
+.card.flipped {
+  font-weight: bold;
+}
+/* matched styling */
+.card.matched {
+  background-color: #dcedc8;
+  cursor: default;
+}
+
+/* ===== end-of-game message ===== */
+#game-over {
+  color: #ffffff;
+  font-size: 18px;
+  margin-top: 10px;
+}
