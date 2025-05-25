@@ -4,7 +4,7 @@
   "version": "1.3",
   "description": "Productivity tools: Pomodoro, Notes, Mini Games, and White Noise.",
   "icons": {
-    "48": "CSS/icons/tomato-svgrepo-com.png"
+    "48": "CSS/icons/ADHDMindFlow.png"
   },
   "permissions": [
     "storage",
@@ -27,7 +27,7 @@
   "web_accessible_resources": [
     {
       "resources": [
-        "CSS/icons/tomato-svgrepo-com.png",
+        "CSS/icons/ADHDMindFlow.png",
         "sounds/white-noise.mp3",
         "game.html",
         "js/game.js",
