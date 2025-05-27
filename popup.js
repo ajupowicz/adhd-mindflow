@@ -45,7 +45,21 @@ closeBtn.onclick = () => {
   panel.classList.remove('active');
   container.classList.remove('expanded');
 };
+const settingBtn = document.getElementById('btn-settings');
 
+if (settingBtn) {
+  settingBtn.addEventListener('click', () => {
+    chrome.storage.local.get('videoQuizDisabled', data => {
+      const isDisabled = data?.videoQuizDisabled === true;
+      const toggle = confirm(
+        isDisabled
+          ? "Enable reflection questions during video watching?"
+          : "Disable reflection questions during video watching?"
+      );
+      chrome.storage.local.set({ videoQuizDisabled: !toggle });
+    });
+  });
+}
 // close the entire popup
 btnClose.onclick = () => {
   window.close();
